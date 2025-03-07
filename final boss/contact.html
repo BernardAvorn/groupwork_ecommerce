@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Group_15cars</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <!-- fontawesome icon library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Leaflet CSS for map -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
+</head>
+<body>
+    <nav>
+        <div class="logo">Group 15</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="contact.html" class="active">Contact</a>
+            <span class="user-email" style="display: none;"></span>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Our team is always here to help.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Form Section -->
+            <div class="contact-form-section">
+                <h2>Send us a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="contact-info-section">
+                <h2>Contact Information</h2>
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Ama  Akroma Avenue<br>TTU</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+233 (245) 934-979</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@group_15.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <h2>Find Us</h2>
+            <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.1824187471257!2d-1.7590208249867616!3d4.909120139815447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe779f45ffa27bf%3A0x62727756ebcdfcad!2sTakoradi%20Technical%20University!5e0!3m2!1sen!2sgh!4v1741156213948!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+
+        <!-- Staff Section -->
+        <!-- <div class="staff-section">
+            <h2>Meet Our Team</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img src="./" alt="John Smith">
+                    <h3>Lead Developer and Desiner</h3>
+                    <p class="staff-title">CEO & Founder</p>
+                    <p class="staff-bio">With over 2 years in the automotive industry and Technology, Ben leads our vision for sustainable transportation.</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                    <h3>Albert</h3>
+                    <p class="staff-title">Organizer</p>
+                    <p class="staff-bio">Albert brings innovative design thinking to our electric vehicle lineup.</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                    <h3>Michael Chen</h3>
+                    <p class="staff-title">Technical Director</p>
+                    <p class="staff-bio">Leading our engineering team in developing cutting-edge EV technology.</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <img src="https://randomuer.me/api/portraits/women/28.jpg" alt="Emma Davis">
+                    <h3>Emma Davis</h3>
+                    <p class="staff-title">Customer Relations</p>
+                    <p class="staff-bio">Ensuring exceptional service and support for our valued customers.</p>
+                    <div class="staff-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Include the existing footer here -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FutureCars</h3>
+                <p>Leading the electric revolution in automotive excellence. We provide premium electric vehicles with cutting-edge technology and sustainable solutions for the modern driver.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Vehicles</a></li>
+                    <li><a href="#">Test Drive</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +233 (245) 934-979</li>
+                    <li><i class="fas fa-envelope"></i> info@group_15cars.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Electric Avenue, Tech City, TC 12345</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Group 15 Cars. All rights reserved. | Designed with <i class="fas fa-heart"></i> for the future</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS for map -->
+    <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
+    <script src="./scripts/contact.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

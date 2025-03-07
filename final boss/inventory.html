@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory - Group_15 Cars</title>
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/inventory.css">
+    <!-- paystacks -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <!-- link for font awesome  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Group 15</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="inventory.html" class="active">Inventory</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <br><br>
+        <div class="cart-icon">
+            🛒
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="./assets/lux (3).mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Our Premium Collection</h1>
+            <div class="hero-text">
+                <p class="fade-in-up">Discover our exclusive range of luxury electric vehicles</p>
+            </div>
+            <button onclick="handleAppointment()" class="appointment-btn">
+                <i class="fas fa-calendar-alt"></i>
+                Schedule a Test Drive
+            </button>
+        </div>
+    </section>
+
+    <!-- <div class="cart-icon">
+        🛒
+        <span class="cart-count">0</span>
+    </div> -->
+    
+    <div class="cart-panel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span class="close-cart">×</span>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-total">
+            <button class="clear-cart">Clear Cart</button>
+            <p>Total: <span class="total-amount">GH₵ 0</span></p>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.motortrend.com/uploads/2024/01/1-2024-Tesla-Model-S-front-view.jpg?w=640&width=640&q=75&format=webp" alt="Tesla Model S" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Tesla Model S</h2>
+                <p class="description">Next-gen electric luxury sedan</p>
+                <ul class="features">
+                    <li>⚡ Dual Motor AWD</li>
+                    <li>🚀 0-60 mph in 3.1s</li>
+                    <li>🔋 405mi Range</li>
+                    <li>🤖 Full Self-Driving</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="tesla">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.porscheorlandpark.com/static/dealer-21321/Porsche-Taycan-Performance.jpg"alt="Porsche Taycan" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Porsche Taycan</h2>
+                <p class="description">Electric performance redefined</p>
+                <ul class="features">
+                    <li>⚡ 750hp Electric Power</li>
+                    <li>🚀 0-60 mph in 2.6s</li>
+                    <li>🔋 300mi Range</li>
+                    <li>🎯 Precision Handling</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="porsche">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://topelectricsuv.com/wp-content/uploads/2024/02/2024-Lucid-Air-Grand-Touring-Zenith-Red-front-three-quarter.jpg" alt="Lucid Air" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Lucid Air</h2>
+                <p class="description">Luxury meets innovation</p>
+                <ul class="features">
+                    <li>⚡ 1,111hp Dream Edition</li>
+                    <li>🚀 0-60 mph in 2.5s</li>
+                    <li>🔋 520mi Range</li>
+                    <li>✨ Premium Interior</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="lucid">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://cdn.motor1.com/images/mgl/lEm8k1/s4/bmw-m8-gran-coupe-by-g-power.webp" alt="BMW M8 Gran Coupé" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 BMW M8 Gran Coupé</h2>
+                <p class="description">Ultimate luxury performance</p>
+                <ul class="features">
+                    <li>🏎️ 4.4L V8 Twin-Turbo</li>
+                    <li>🚀 0-60 mph in 3.2s</li>
+                    <li>⚡ 617 Horsepower</li>
+                    <li>🎯 xDrive AWD System</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="bmw">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://vehicle-images.dealerinspire.com/a797-11001890/W1K7X5KB5RV003035/7c914ec8bb27f8bed6d084d384057386.jpg" alt="Mercedes-AMG GT" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Mercedes-AMG GT</h2>
+                <p class="description">Performance meets luxury</p>
+                <ul class="features">
+                    <li>🏎️ 4.0L V8 Biturbo</li>
+                    <li>🚀 0-60 mph in 3.1s</li>
+                    <li>⚡ 577 Horsepower</li>
+                    <li>💫 AMG RIDE CONTROL</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="mercedes">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/2024-aston-martin-db12-123-646e1d6217920.jpg?crop=0.832xw:0.700xh;0.168xw,0.0636xh&resize=1200:*" alt="Aston Martin DB12" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Aston Martin DB12</h2>
+                <p class="description">British luxury perfection</p>
+                <ul class="features">
+                    <li>🏎️ 4.0L Twin-Turbo V8</li>
+                    <li>🚀 0-60 mph in 3.3s</li>
+                    <li>⚡ 671 Horsepower</li>
+                    <li>✨ Adaptive Suspension</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="aston">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49c48f67-79f5-4420-b234-722128b4eb21/dha01eg-1d4aec66-04dc-48f7-847f-6fa8643c0a42.jpg/v1/fill/w_1095,h_730,q_70,strp/lamborghini_aventador_svj__dortmund__2024__48_01_by_exotic_legends_dha01eg-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcLzQ5YzQ4ZjY3LTc5ZjUtNDQyMC1iMjM0LTcyMjEyOGI0ZWIyMVwvZGhhMDFlZy0xZDRhZWM2Ni0wNGRjLTQ4ZjctODQ3Zi02ZmE4NjQzYzBhNDIuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.J3wkRMqbhDbnASgogtyaZjJ6bNzONmqJIDDoZrNET00" alt="Rolls-Royce Phantom" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Rolls-Royce Phantom</h2>
+                <p class="description">The pinnacle of automotive luxury</p>
+                <ul class="features">
+                    <li>🏎️ 6.75L Twin-Turbo V12</li>
+                    <li>🚀 0-60 mph in 5.3s</li>
+                    <li>⚡ 563 Horsepower</li>
+                    <li>💫 Bespoke Interior</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="rollsroyce">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://macau.bentleymotors.com/userdata/11913/files/performance_continental_gt_mulliner_25my_gt_location_754x377.jpg" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Bentley Continental GT</h2>
+                <p class="description">Unrivaled grand touring experience</p>
+                <ul class="features">
+                    <li>🏎️ 6.0L Twin-Turbo W12</li>
+                    <li>🚀 0-60 mph in 3.6s</li>
+                    <li>⚡ 650 Horsepower</li>
+                    <li>✨ Rotating Display</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="bentley">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49c48f67-79f5-4420-b234-722128b4eb21/dha01eg-1d4aec66-04dc-48f7-847f-6fa8643c0a42.jpg/v1/fill/w_1095,h_730,q_70,strp/lamborghini_aventador_svj__dortmund__2024__48_01_by_exotic_legends_dha01eg-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcLzQ5YzQ4ZjY3LTc5ZjUtNDQyMC1iMjM0LTcyMjEyOGI0ZWIyMVwvZGhhMDFlZy0xZDRhZWM2Ni0wNGRjLTQ4ZjctODQ3Zi02ZmE4NjQzYzBhNDIuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.J3wkRMqbhDbnASgogtyaZjJ6bNzONmqJIDDoZrNET00" alt="Lamborghini Aventador" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Lamborghini Aventador</h2>
+                <p class="description">Exotic performance redefined</p>
+                <ul class="features">
+                    <li>🏎️ 6.5L V12 Engine</li>
+                    <li>🚀 0-60 mph in 2.9s</li>
+                    <li>⚡ 769 Horsepower</li>
+                    <li>💫 Carbon Fiber Monocoque</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="lamborghini">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://carsguide-res.cloudinary.com/image/upload/c_fit,h_347,w_616,f_auto,t_cg_base/v1/editorial/story%2Fhero_image%2F2024-Audi-RS6-Avant-GT-News-1001x565-8.jpg" alt="Audi RS6 Avant" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >2024 Audi RS6 Avant</h2>
+                <p class="description">High-performance wagon</p>
+                <ul class="features">
+                    <li>🏎️ 4.0L V8 Twin-Turbo</li>
+                    <li>🚀 0-60 mph in 3.5s</li>
+                    <li>⚡ 591 Horsepower</li>
+                    <li>🎯 quattro AWD System</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar1">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://media.cdn-jaguarlandrover.com/api/v2/images/106948/w/1600.jpg" alt="Range Rover Sport" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Range Rover Sport</h2>
+                <p class="description">Luxury SUV with sporty dynamics</p>
+                <ul class="features">
+                    <li>🏎️ 3.0L Inline-6 Turbo</li>
+                    <li>🚀 0-60 mph in 5.5s</li>
+                    <li>⚡ 395 Horsepower</li>
+                    <li>🎯 Terrain Response 2</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar2">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.cadillac.com/content/dam/cadillac/na/us/english/index/vehicles/2024/crossover-suvs/escalade/01-images/my24-escalade-mov-packages-onyx-v2.jpg?imwidth=1920" alt="Cadillac Escalade" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Cadillac Escalade</h2>
+                <p class="description">Iconic American luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 6.2L V8 Engine</li>
+                    <li>🚀 0-60 mph in 6.1s</li>
+                    <li>⚡ 420 Horsepower</li>
+                    <li>✨ Super Cruise</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar3">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://bluesky.cdn.imgeng.in/cogstock-images/aos-245b916b5057b79da19af9ef2dff506624109438.jpg?imgeng=/w_447/&height=335&mode=crop" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Ferrari SF90 Stradale</h2>
+                <p class="description">Plug-in hybrid supercar</p>
+                <ul class="features">
+                    <li>🏎️ 4.0L Twin-Turbo V8</li>
+                    <li>🚀 0-60 mph in 2.5s</li>
+                    <li>⚡ 986 Horsepower</li>
+                    <li>💫 AWD System</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar1">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://cdn.motor1.com/images/mgl/nA9VJ1/s3/mclaren-765lt-by-novitec.webp" alt="McLaren 765LT" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >McLaren 765LT</h2>
+                <p class="description">Track-focused performance</p>
+                <ul class="features">
+                    <li>🏎️ 4.0L Twin-Turbo V8</li>
+                    <li>🚀 0-60 mph in 2.7s</li>
+                    <li>⚡ 755 Horsepower</li>
+                    <li>✨ Longtail Design</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar2">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://www.thedrive.com/wp-content/uploads/2022/12/21/bugatti-profilee-lead-image.jpg" alt="Bugatti Chiron" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Bugatti Chiron</h2>
+                <p class="description">Ultimate hypercar</p>
+                <ul class="features">
+                    <li>🏎️ 8.0L Quad-Turbo W16</li>
+                    <li>🚀 0-60 mph in 2.4s</li>
+                    <li>⚡ 1500 Horsepower</li>
+                    <li>💫 Unmatched Performance</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar3">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://radical-mag.com/wp-content/uploads/2024/12/Huayra-R-005-30-e1734193823967-1920x1177.jpeg" alt="Pagani Huayra" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Pagani Huayra</h2>
+                <p class="description">Handcrafted Italian hypercar</p>
+                <ul class="features">
+                    <li>🏎️ 6.0L Twin-Turbo V12</li>
+                    <li>🚀 0-60 mph in 2.8s</li>
+                    <li>⚡ 754 Horsepower</li>
+                    <li>✨ Carbon-Titanium Monocoque</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar4">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://en.wheelz.me/wp-content/uploads/2024/09/Volvo-XC90-2025-2.webp" alt="Volvo XC90" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Volvo XC90</h2>
+                <p class="description">Swedish luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 2.0L Turbocharged Engine</li>
+                    <li>🚀 0-60 mph in 6.4s</li>
+                    <li>⚡ 316 Horsepower</li>
+                    <li>🎯 Pilot Assist</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar4">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.cnet.com/a/img/resize/5d5ad2a2bc19a12eaf882ea3f15693c38bfd2de0/hub/2018/10/31/3b7082a9-6a20-411a-8777-bade1250c034/lexus-lx-inspiration-hero.jpg?auto=webp&fit=crop&height=675&width=1200" alt="Lexus LX" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Lexus LX</h2>
+                <p class="description">Japanese luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 3.5L Twin-Turbo V6</li>
+                    <li>🚀 0-60 mph in 6.9s</li>
+                    <li>⚡ 409 Horsepower</li>
+                    <li>✨ Multi-Terrain Select</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar5">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://cdn.motor1.com/images/mgl/erZ6K/s3/koenigsegg-jesko-absolut.webp" alt="Koenigsegg Jesko" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Koenigsegg Jesko</h2>
+                <p class="description">Swedish hypercar</p>
+                <ul class="features">
+                    <li>🏎️ 5.0L Twin-Turbo V8</li>
+                    <li>🚀 0-60 mph in 2.5s</li>
+                    <li>⚡ 1600 Horsepower</li>
+                    <li>💫 Light Speed Transmission</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar5">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.carsoup.com/blog/content/images/2024/04/iStock-1079981024.jpg" alt="Acura NSX" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Acura NSX</h2>
+                <p class="description">Hybrid supercar</p>
+                <ul class="features">
+                    <li>🏎️ 3.5L Twin-Turbo V6</li>
+                    <li>🚀 0-60 mph in 3.0s</li>
+                    <li>⚡ 573 Horsepower</li>
+                    <li>✨ Sport Hybrid SH-AWD</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">50</span>
+                </div>
+                <button class="pay-button" data-car="normalCar6">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://web-cdn.rimac-automobili.com/wp-content/uploads/2021/05/31101405/intro_slider_07_optimised-1600x900.jpg" alt="Rimac Nevera" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Rimac Nevera</h2>
+                <p class="description">All-electric hypercar</p>
+                <ul class="features">
+                    <li>⚡ Four Electric Motors</li>
+                    <li>🚀 0-60 mph in 1.85s</li>
+                    <li>⚡ 1914 Horsepower</li>
+                    <li>💫 Torque Vectoring AWD</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar6">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.kbb.com/wp-content/uploads/2024/03/2025-infiniti-qx80-exterior-front-gray.jpg" alt="Infiniti QX80" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Infiniti QX80</h2>
+                <p class="description">Luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 5.6L V8 Engine</li>
+                    <li>🚀 0-60 mph in 6.4s</li>
+                    <li>⚡ 400 Horsepower</li>
+                    <li>🎯 Intelligent All-Wheel Drive</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar7">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://inkasarmored.com/wp-content/uploads/INKAS-Armored-Lincoln-Navigator-L-1170x500.jpg" alt="Lincoln Navigator" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Lincoln Navigator</h2>
+                <p class="description">Luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 3.5L V6 Engine</li>
+                    <li>🚀 0-60 mph in 5.4s</li>
+                    <li>⚡ 450 Horsepower</li>
+                    <li>✨ Intelligent All-Wheel Drive</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar8">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://www.edmunds.com/assets/m/cs/bltda892b5965a01a82/663a8ef0f807b2a238e9b002/2025_Rolls_Royce_Cullinan_5_815.jpg" alt="Rolls-Royce Cullinan" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Rolls-Royce Cullinan <span style="color: gold;">(Premium)</span></h2>
+                <p class="description">Luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 6.75L V12 Engine</li>
+                    <li>🚀 0-60 mph in 4.8s</li>
+                    <li>⚡ 563 Horsepower</li>
+                    <li>✨ Intelligent All-Wheel Drive</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar7">Add to Cart</button>
+            </div>
+        </div>
+<!-- 
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://www.kbb.com/wp-content/uploads/2024/03/2025-infiniti-qx80-exterior-front-gray.jpg" alt="Infiniti QX80" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Infiniti QX80</h2>
+                <p class="description">Luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 5.6L V8 Engine</li>
+                    <li>🚀 0-60 mph in 6.4s</li>
+                    <li>⚡ 400 Horsepower</li>
+                    <li>🎯 Intelligent All-Wheel Drive</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="normalCar9">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="car-card premium">
+            <div class="car-image">
+                <img src="https://images.dealer.com/ddc/vehicles/2024/Rolls-Royce/Cullinan/SUV/color/Adriatic%20Blue-EXAB-50,71,103-640-en_US.jpg" alt="Rolls-Royce Cullinan" class="car-icon">
+            </div>
+            <div class="stock-indicator">
+                In Stock: <span class="stock-count">0</span>
+            </div>
+            <div class="car-details">
+                <h2 >Rolls-Royce Cullinan <span style="color: gold;">(Premium)</span></h2>
+                <p class="description">Luxury SUV</p>
+                <ul class="features">
+                    <li>🏎️ 6.75L V12 Engine</li>
+                    <li>🚀 0-60 mph in 4.8s</li>
+                    <li>⚡ 563 Horsepower</li>
+                    <li>✨ Intelligent All-Wheel Drive</li>
+                </ul>
+                <div class="price">
+                    <span class="currency">GH₵</span>
+                    <span class="amount">1</span>
+                </div>
+                <button class="pay-button" data-car="premiumCar7">Add to Cart</button>
+            </div>
+        </div> -->
+    </section>
+
+  <!-- footer begins here -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FutureCars</h3>
+                <p>Leading the electric revolution in automotive excellence. We provide premium electric vehicles with cutting-edge technology and sustainable solutions for the modern driver.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Vehicles</a></li>
+                    <li><a href="#">Test Drive</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +233 (245) 934-979</li>
+                    <li><i class="fas fa-envelope"></i> info@Group_15cars.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ama Akroma, TTU</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 FutureCars. All rights reserved. | Designed with <i class="fas fa-heart"></i> for the future</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/inventory.js"></script>
+    <!-- <script src="./scripts/main.js"></script> -->
+</body>
+</html>

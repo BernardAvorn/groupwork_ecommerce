@@ -1,0 +1,329 @@
+/* Contact page specific styles */
+.contact-container {
+    padding: 120px 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    color:  #60a5fa;
+    margin-bottom: 1rem;
+    font-family: 'Aquire';
+}
+
+.contact-header p {
+    color:  #60a5fa;
+    font-size: 1.1rem;
+}
+
+/* Contact Form Styles */
+.contact-form-section {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    color: #60a5fa;
+}
+
+.contact-form-section p {
+    color: #60a5fa;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-form {
+    color: #60a5fa;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid var(--bg-offset);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    transform: translateY(-2px);
+}
+
+/* Contact Info Styles */
+.contact-info-section {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.contact-info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.1);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.contact-info-item h3 {
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-item p {
+    color: #60a5fa;
+    line-height: 1.6;
+}
+
+/* Map Section Styles */
+.map-section {
+    margin-bottom: 4rem;
+}
+
+.map-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color:  #60a5fa;
+    font-family: 'Aquire';
+}
+
+#map {
+    height: 400px;
+    width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+
+/* Staff Section Enhancement */
+/* .staff-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--bg-offset) 0%, var(--bg-light) 100%);
+}
+
+.staff-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.staff-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 2px;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding: 0 2rem;
+}
+
+.staff-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.staff-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.staff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    z-index: -1;
+}
+
+.staff-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 4px solid #2563eb;
+    padding: 4px;
+    background: white;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.staff-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.staff-card h3 {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.staff-title {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.staff-bio {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.staff-bio::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb, transparent);
+}
+
+.staff-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.staff-social a {
+    color: #2563eb;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.staff-social a:hover {
+    transform: translateY(-3px);
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.staff-card.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.staff-card.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .staff-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .staff-card {
+        padding: 1.5rem;
+    }
+    
+    .staff-card img {
+        width: 120px;
+        height: 120px;
+    }
+} */
